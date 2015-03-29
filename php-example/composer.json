@@ -1,0 +1,17 @@
+{
+    "name": "dholmes/php-example",
+    "description": "Example site for Presentation",
+    "require": {
+        "symfony/var-dumper": "2.6.5",
+        "slim/slim": "2.6.2",
+        "slim/views": "0.*",
+        "twig/twig": "1.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Holmes",
+            "email": "daniel.holmes@gmail.com"
+        }
+    ]
+}
