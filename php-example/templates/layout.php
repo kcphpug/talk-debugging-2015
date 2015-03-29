@@ -21,7 +21,7 @@
 </head>
 
 <body>
-
+<h1 class="text-center">Kansas City's PHP Demolition Lab</h1>
 <div class="site-wrapper">
 
     <div class="site-wrapper-inner">

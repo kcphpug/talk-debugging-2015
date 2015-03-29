@@ -3,6 +3,9 @@ body {
 }
 .site-wrapper-inner .inner.cover
 {
+    margin:auto;
+    max-width:800px;
+
     margin-bottom:200px;
 }
 #error-log  {
