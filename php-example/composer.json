@@ -4,8 +4,7 @@
     "require": {
         "symfony/var-dumper": "2.6.5",
         "slim/slim": "2.6.2",
-        "slim/views": "0.*",
-        "twig/twig": "1.*"
+        "slim/views": "0.*"
     },
     "license": "MIT",
     "authors": [
@@ -13,5 +12,10 @@
             "name": "Daniel Holmes",
             "email": "daniel.holmes@gmail.com"
         }
-    ]
+    ],
+    "autoload":{
+        "classmap": [
+          "lib"
+        ]
+    }
 }

@@ -8,12 +8,10 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Meetup Wheel of Prizes</title>
 
     <link href="/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-cover.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    {% block head_css %}{% endblock %}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,26 +26,26 @@
 
     <div class="site-wrapper-inner">
 
-            <div class="inner cover">
-                {% block content %}{% endblock %}
-            </div>
+        <div class="inner cover">
+            <?= $this->data['_content']?>
+        </div>
 
-            <div class="mastfoot">
-                <div class="inner">
-                    <div>
+        <div class="mastfoot">
+            <div class="inner">
+                <div>
                     <form class="navbar-form navbar-left">
                         <a class="btn btn-default navbar-btn" target="error-log" href="/show-error-log">refresh</a>
                         <a class="btn btn-default navbar-btn" target="error-log" href="/clear-error-log">clear</a>
                     </form>
 
                     <iframe id="error-log" name="error-log" width="100%" src="/show-error-log"></iframe>
-                    </div>
                 </div>
             </div>
-
         </div>
 
     </div>
+
+</div>
 
 </div>
 
@@ -55,6 +53,5 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/libs/jquery/dist/jquery.min.js"></script>
 <script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-{% block body_js %}{% endblock %}
 </body>
 </html>

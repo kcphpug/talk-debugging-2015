@@ -1,28 +1,26 @@
 <?php
 require '../vendor/autoload.php';
+
+ini_set('log_errors',1);
+ini_set('error_log','../logs/error.log');
+
 // Prepare app
 $config = require '../config/main.php';
 $app = new \Slim\Slim($config);
+
 // Local (not in github) settings can go here
 @$configLocal = include '../config/local.php';
 if($configLocal) $app->config($configLocal);
-$app->view(new \Slim\Views\Twig());
-$app->view->parserOptions = array(
-    'charset' => 'utf-8',
-    'cache' => realpath('../templates/cache'),
-    'auto_reload' => true,
-    'strict_variables' => false,
-    'autoescape' => true
-);
+$app->view(new SimpleView());
+$app->view->setLayout('layout.php');
 
-$app->view->setData('errorLogContents', $errorLogContents);
-$app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
+
 
 
 // Define routes
 
 $app->get('/', function () use ($app) {
-    $app->render('views/index.html');
+    $app->render('views/index.php');
 });
 
 
