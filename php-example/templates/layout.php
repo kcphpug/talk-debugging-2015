@@ -27,13 +27,20 @@
     <div class="site-wrapper-inner">
 
         <div class="inner cover">
-            <?= $this->data['_content']?>
+            <h2><?= $this->data['_contentFileName']?></h2>
+            <pre class=""><?= $this->data['_contentSource']?>
+            </pre>
+            <h2>response</h2>
+            <pre class="">
+                <?= $this->data['_content']?>
+            </pre>
         </div>
 
         <div class="mastfoot">
             <div class="inner">
                 <div>
-                    <form class="navbar-form navbar-left">
+                    <form class="navbar-form navbar-right">
+                        PHP Error Log
                         <a class="btn btn-default navbar-btn" target="error-log" href="/show-error-log">refresh</a>
                         <a class="btn btn-default navbar-btn" target="error-log" href="/clear-error-log">clear</a>
                     </form>

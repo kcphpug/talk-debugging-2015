@@ -12,7 +12,11 @@ class SimpleView extends \Slim\View
     {
         if ($this->layout){
             $content =  parent::render($template);
-            $this->setData(array('_content' => $content));
+            $sourcePath = parent::getTemplatePathname($template);
+            $this->setData(array(
+                '_contentFileName' => $template,
+                '_content' => $content,
+                '_contentSource' => highlight_file($sourcePath,true)));
             return parent::render($this->layout);
         } else {
             return parent::render($template);
