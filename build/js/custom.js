@@ -9,3 +9,8 @@ head.ready("lodash.min.js", function () {
   // LoDash can be used from here
 });
 head.js("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js");
+
+
+function resizeIframe(obj) {
+    obj.style.height = obj.parentNode.parentNode.scrollHeight - 200 + 'px';
+}

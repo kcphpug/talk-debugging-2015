@@ -5,8 +5,6 @@ body {
 {
     margin:auto;
     max-width:800px;
-
-    margin-bottom:200px;
 }
 #error-log  {
     background:white;

@@ -1,1 +1,4 @@
 /* custom styles can go here */
+iframe {
+    border-radius: 10px;
+}

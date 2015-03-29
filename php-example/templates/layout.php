@@ -21,19 +21,26 @@
 </head>
 
 <body>
-<h1 class="text-center">Kansas City's PHP Demolition Lab</h1>
 <div class="site-wrapper">
 
     <div class="site-wrapper-inner">
 
         <div class="inner cover">
-            <h2><?= $this->data['_contentFileName']?></h2>
-            <pre class=""><?= $this->data['_contentSource']?>
-            </pre>
-            <h2>response</h2>
-            <pre class="">
-                <?= $this->data['_content']?>
-            </pre>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <h2><?= $this->data['_contentFileName']?></h2>
+                        <pre class=""><?= $this->data['_contentSource']?>
+                        </pre>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <h2>response</h2>
+                        <pre class="">
+                            <?= $this->data['_content']?>
+                        </pre>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="mastfoot">
