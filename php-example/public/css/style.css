@@ -4,7 +4,6 @@ body {
 .site-wrapper-inner .inner.cover
 {
     margin:auto;
-    max-width:800px;
 }
 #error-log  {
     background:white;
