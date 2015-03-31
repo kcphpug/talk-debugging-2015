@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+$responseSize = strlen(trim($this->data['_content']));
+$responseWidth = ( $responseSize == 0 || $responseSize > 100 ) ? '12' : '6';
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -26,17 +30,17 @@
     <div class="site-wrapper-inner">
 
         <div class="inner cover">
-            <div class="container-fluid">
+            <div class="container-fluid" style="max-width:900px">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6">
+                    <div class="col-xs-12 col-sm-<?=$responseWidth ?>">
                         <h2><?= $this->data['_contentFileName']?></h2>
-                        <pre class=""><?= $this->data['_contentSource']?>
+                        <pre style="max-width:800px;"><?= $this->data['_contentSource']?>
                         </pre>
                     </div>
-                    <div class="col-xs-12 col-sm-6">
+
+                    <div class="col-xs-12 col-sm-<?=$responseWidth ?>">
                         <h2>response</h2>
-                        <pre class="">
-                            <?= $this->data['_content']?>
+                        <pre style="max-width:800px;"><?= $this->data['_content']?>
                         </pre>
                     </div>
                 </div>
@@ -62,7 +66,7 @@
 </div>
 
 </div>
-
+<a style="position:fixed; right:10px; top:10px;" href="javascript:window.location.reload(true)">Reload</a>
 
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/libs/jquery/dist/jquery.min.js"></script>

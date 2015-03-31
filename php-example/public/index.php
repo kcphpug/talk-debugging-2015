@@ -23,6 +23,13 @@ $app->get('/', function () use ($app) {
     $app->render('views/index.php');
 });
 
+$app->get('/php-var-dump',function () use ($app) {
+   ini_set('xdebug.default_enable','Off');
+   $app->render('views/php-var-dump.php');
+});
+
+
+/** Log-control actions */
 
 $app->get('/show-error-log', function () use ($app) {
     $errorLogContents = file_get_contents(realpath('../logs/error.log'));
@@ -33,6 +40,11 @@ $app->get('/clear-error-log', function () use ($app) {
     file_put_contents(realpath('../logs/error.log'),"");
     $app->redirect('/show-error-log');
 });
+
+$app->get('/:name', function ($name) use ($app) {
+    $app->render('views/'.$name.'.php');
+});
+
 
 // Run app
 $app->run();

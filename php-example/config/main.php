@@ -1,6 +1,6 @@
 <?php
 
 return array(
-    'debug' => false,
+    'debug' => true,
     'templates.path' => '../templates',
 );
