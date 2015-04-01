@@ -2,9 +2,11 @@
     "name": "dholmes/php-example",
     "description": "Example site for Presentation",
     "require": {
-        "symfony/var-dumper": "2.6.5",
+        "symfony/var-dumper": "~2.6",
         "slim/slim": "2.6.2",
-        "slim/views": "0.*"
+        "slim/views": "0.*",
+        "filp/whoops": "1.2.*@dev",
+        "maximebf/debugbar": "~1.10"
     },
     "license": "MIT",
     "authors": [

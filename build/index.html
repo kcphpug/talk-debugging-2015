@@ -86,7 +86,7 @@ Screenshot needed
 </iframe>
 </section>
 <section id="php-error-report-log-3" class="slide">
-<h3>Error Reporting (to Log with Info)</h3><iframe width="100%" onload="resizeIframe(this)" src="http://127.0.0.1:8888/php-error-report-log-3">
+<h3>Backtrace</h3><iframe width="100%" onload="resizeIframe(this)" src="http://127.0.0.1:8888/php-error-report-log-3">
 Screenshot needed
 </iframe>
 </section>
@@ -142,11 +142,150 @@ Screenshot needed
 </li>
 </ul>
 <p><small>
-<em>die() or exit()</em>
+<em>for debugging only, you can set &quot;breakpoints&quot; with die() or exit()</em>
 </small></p>
 </section>
 <section id="modern" class="slide">
 <h1>Modern?</h1>
+</section>
+<section id="modern-a" class="slide">
+<h1>Modern:</h1><ul>
+<li>Shouldn&#39;t need to update code</li>
+<li>Shouldn&#39;t need to remember to update code again when you are done</li>
+<li>Hope you didn&#39;t break something / leave something in</li>
+<li>Out of the way until we need it</li>
+<li>Or, maybe just LOOKS nice!</li>
+</ul>
+</section>
+<section id="whoops-run" class="slide">
+<h3>Catch Exceptions with Whoops!</h3><p><small><a href="https://github.com/filp/whoops">https://github.com/filp/whoops</a></small></p>
+<iframe width="100%" onload="resizeIframe(this,230)" src="http://127.0.0.1:8888/whoops-run">
+Screenshot needed
+</iframe>
+</section>
+<section id="whoops" class="slide">
+<h3>Catch Exceptions with Whoops!</h3><p><small><a href="https://github.com/filp/whoops">https://github.com/filp/whoops</a></small></p>
+<pre><code class="lang-bash">composer require flip/whoops
+</code></pre>
+<iframe width="100%" onload="resizeIframe(this,280)" src="http://127.0.0.1:8888/whoops">
+Screenshot needed
+</iframe><aside class="notes"><p>If you have laravel 4, you have already seen Whoops.  Community-provided integration for StackPHP, cake, Yii, Slim, but also great standalone.</p></aside>
+</section>
+<section id="debugbar" class="slide">
+<h3>Monitor the things with a debug bar!</h3><p><small><a href="http://phpdebugbar.com">http://phpdebugbar.com</a></small></p>
+<pre><code class="lang-bash">composer require maximebf/debugbar
+</code></pre>
+<iframe style="background:white" width="100%" onload="resizeIframe(this,280)" src="http://phpdebugbar.com/">
+Screenshot needed
+</iframe><aside class="notes"><p>I really wanted to get this to work, but I need to take some time to hook it into slim.</p>
+<p>If you check out my presentation on github you can see where I finally left it.</p></aside>
+</section>
+<section id="var-dumper-xdebug" class="slide">
+<h2>Var_dump made nicer</h2><p><small>With <a href="http://symfony.com/doc/current/components/var_dumper/introduction.html">Symfony VarDumper</a> 
+and <a href="http://xdebug.org/docs/display">XDebug</a></small></p>
+<iframe width="100%" onload="resizeIframe(this,280)" src="http://127.0.0.1:8888/symfony-var-dumper-xdebug">
+Screenshot needed
+</iframe><aside class="notes"><p>xdebug actually can enable a bunch of these kinds of things.  Stacktraces, memory tracking, etc. If you already have
+xdebug installed, check them out!</p></aside>
+</section>
+<section id="modern-debugging-xdebug" class="slide">
+<h1>xdebug!</h1><ul>
+<li>NO need to update code</li>
+<li>NO need to remember to update code again when done</li>
+<li>Out of the way until we need it</li>
+<li>Depending on IDE: just LOOKS nice!</li>
+</ul>
+</section>
+<section id="xdebug-demo" class="slide">
+<h1>xdebug Demo!</h1><ul>
+<li>Inspecting (changing) Variables</li>
+<li>Backtrace (Frames) </li>
+<li>Breakpoints</li>
+<li>Step over, step into, step out</li>
+<li>Break on specific values</li>
+</ul>
+</section>
+<section>
+<section id="configure-xdebug-easysteps" class="slide">
+<h1>configure xdebug</h1><h2>Your mileage WILL vary</h2><ul>
+<li>OS</li>
+<li>PHP Version</li>
+<li>IDE</li>
+<li>Local, Local VM or Remote?</li>
+</ul>
+</section>
+<section id="configure-xdebug-step1" class="slide">
+<p>Step 1. Register xDebug and settings with PHP</p>
+<pre><code class="lang-bash">apt-get install php5-xdebug; <span class="hljs-comment"># download xdebug</span>
+vim /etc/php/cli/conf.d/<span class="hljs-number">20</span>-xdebug.ini <span class="hljs-comment"># configure xdebug</span>
+</code></pre>
+<pre><code><span class="hljs-variable">zend_extension=</span>xdebug.so
+xdebug.<span class="hljs-variable">remote_enable=</span><span class="hljs-number">1</span>
+xdebug.<span class="hljs-variable">remote_port=</span><span class="hljs-number">9900</span>
+xdebug.<span class="hljs-variable">profiler_enable=</span><span class="hljs-number">1</span>
+</code></pre>
+</section>
+<section id="configure-xdebug-step2" class="slide">
+<p>Step 2. Setup your IDE (phpStorm shown)
+<img src="images/debug-interpreter.png" alt="">
+<img src="images/debug-port.png" alt=""></p>
+</section>
+<section id="configure-xdebug-step3" class="slide">
+<p>Step 3: Make some Bookmarklets
+<a href="https://www.jetbrains.com/phpstorm/marklets/">https://www.jetbrains.com/phpstorm/marklets/</a></p>
+<p>Start Debug</p>
+<pre><code>javascript:(
+<span class="hljs-comment">/** @version 0.5.2 */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-built_in">document</span>.cookie=<span class="hljs-string">'XDEBUG_SESSION='</span>+<span class="hljs-string">'PHPSTORM'</span>+<span class="hljs-string">';path=/;'</span>;
+    }
+)()
+</code></pre><p>Stop Debug</p>
+<pre><code>javascript:(
+<span class="hljs-comment">/** @version 0.5.2 */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-built_in">document</span>.cookie=<span class="hljs-string">'XDEBUG_SESSION='</span>+<span class="hljs-string">''</span>
+        +<span class="hljs-string">';expires=Mon, 05 Jul 2000 00:00:00 GMT;path=/;'</span>;
+    }
+)()
+</code></pre>
+</section>
+</section>
+<section id="walk-away" class="slide">
+<h1>walk away</h1><blockquote>
+<p>Sometimes it&#39;s best to get out of your head and out of your code.</p>
+</blockquote>
+</section>
+<section id="repls" class="slide">
+<h1>REPLs</h1><p>Read-Eval-Print-Loop</p>
+<ul>
+<li class="fragment roll-in">php -a &nbsp;&nbsp;&nbsp;<em><a href="http://php.net/manual/en/features.commandline.interactive.php">well, maybe</a></em></li>
+<li class="fragment roll-in"><a href="https://github.com/borisrepl/boris">Boris</a> </li>
+<li class="fragment roll-in"><a href="http://psysh.org/">PsySh</a> <em>My Fav! Thx Eric!</em></li>
+<li class="fragment roll-in"><a href="http://www.phpsh.org/">phpsh</a></li>
+</ul>
+</section>
+<section id="repls-online" class="slide">
+<h2>Online &quot;REPLs&quot;</h2><h3><a href="http://3v4l.org">3v4l.org</a></h3><h3><a href="http://phpepl.herokuapp.com/">phpepl</a></h3><h2>and sometimes you need...</h2><h3><a href="http://www.phpliveregex.com/">PHP Live Regex</a></h3><h3><a href="http://jsfiddle.net/19ue1o0v/30/">JSFiddle</a></h3><h3><a href="http://sqlfiddle.com/#!9/dcb16/1">SQL Fiddle</a></h3>
+</section>
+<section id="unit-tests" class="slide">
+<h1>phpunit!</h1><ul>
+<li>NO need to update code</li>
+<li>NO need to remember to update code again when done</li>
+<li>Out of the way until we need it</li>
+<li>Depending on reports: just LOOKS nice!</li>
+</ul>
+<p><br></p>
+<h2>Best of all!</h2><p>once debugged, always debugged!</p>
+<div class="fragment roll-in"><strong>But that&#39;s a whole other talk</strong></div>
+</section>
+<section id="thank-you" class="slide" data-background="/images/phpthethings.png">
+<p><h1>Thank you!</h1></p>
+<p><div></p>
+<p><div style="text-align:left"><h5>Questions? Comments?</h5></p>
+<p><a href="https://twitter/dholmes/">@dan_holmes</a></p>
+<p><a href="https://github.com/dholmes">github/dholmes</a></p>
+<p><a href="https://github.com/kcphpug">github/kcphpug</a></p>
 </section></div>
     </div>
 

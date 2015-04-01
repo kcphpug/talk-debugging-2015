@@ -13,5 +13,5 @@
     * "serialize" functions like json_encode()
 
 <small>
-*die() or exit()*
+*for debugging only, you can set "breakpoints" with die() or exit()*
 </small>

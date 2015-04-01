@@ -11,6 +11,11 @@ head.ready("lodash.min.js", function () {
 head.js("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js");
 
 
-function resizeIframe(obj) {
-    obj.style.height = obj.parentNode.parentNode.scrollHeight - 200 + 'px';
+/**
+ * @param obj iFrame object
+ * @param topSize  height of space above - I know height seems easier, but I wanted it to aim for the bottom'
+ */
+function resizeIframe(obj,topSize) {
+    if(typeof topSize == 'undefined') topSize = 200;
+    obj.style.height = obj.parentNode.parentNode.scrollHeight - topSize + 'px';
 }

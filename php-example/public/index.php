@@ -15,8 +15,6 @@ $app->view(new SimpleView());
 $app->view->setLayout('layout.php');
 
 
-
-
 // Define routes
 
 $app->get('/', function () use ($app) {
@@ -28,6 +26,31 @@ $app->get('/php-var-dump',function () use ($app) {
    $app->render('views/php-var-dump.php');
 });
 
+
+/* @todo I got started working on this, but I really need to take the time and do / find a proper integration.
+$app->get('/debugbar',function () use ($app) {
+
+    $data             = array();
+    $debugbar         = new DebugBar\StandardDebugBar();
+    $debugbarRenderer = $debugbar->getJavascriptRenderer();
+
+    $debugbar["messages"]->addMessage( "hello world!" );
+
+    ob_start();
+    $debugbarRenderer->dumpCssAssets();
+    $css = ob_get_clean();
+
+    ob_start();
+    $debugbarRenderer->setIncludeVendors(false);
+    $debugbarRenderer->dumpJsAssets();
+    $js = ob_get_clean();
+
+    $data['headerScripts'] = "<style type='text/css'>" . $css. "</style>";
+    $data['headerScripts'] .= "<script type='application/javascript'>" . $js . "</script>";
+
+    $app->render('views/debugbar.php',$data);
+});
+ */
 
 /** Log-control actions */
 

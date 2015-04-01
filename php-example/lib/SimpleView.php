@@ -14,7 +14,7 @@ class SimpleView extends \Slim\View
             $content =  parent::render($template);
             $sourcePath = parent::getTemplatePathname($template);
             $this->setData(array(
-                '_contentFileName' => $template,
+                '_contentFileName' => preg_replace('/^views\//','',$template),
                 '_content' => $content,
                 '_contentSource' => highlight_file($sourcePath,true)));
             return parent::render($this->layout);
