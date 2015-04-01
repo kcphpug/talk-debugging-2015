@@ -13,6 +13,7 @@
 ####To Start Presentation:
 ````bash
 cd php-example/public
+composer install
 php -S 127.0.0.1:8888
 ````
 ````bash
