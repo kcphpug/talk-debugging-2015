@@ -19,4 +19,4 @@ php -S 127.0.0.1:8888
 npm install -g prez
 prez --server --watch
 ````
-Code and markdown may be updated.
+Code and markdown may be updated to easily update slides.
