@@ -11,11 +11,14 @@
 * slim (php)
 
 ####To Start Presentation:
+php / slim backend
 ````bash
 cd php-example/public
 composer install
 php -S 127.0.0.1:8888
 ````
+
+prez/reveal front-end
 ````bash
 npm install -g prez
 prez --server --watch
