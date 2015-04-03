@@ -2,6 +2,10 @@
 ## Presented to Kansas City's PHP User Group
 ### April 1, 2015
 
+#### Pre-rendered slides
+Because this presentation was a mix of content and running examples, I'll need to do some
+work to generate a "slidedeck".  When I do I'll post it here and to the comments section on our meetup.
+
 ####Slide system uses:
 * npm
 * php 5.4+
