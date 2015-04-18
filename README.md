@@ -42,4 +42,4 @@ Download the most recent printed version here:
 
 https://github.com/kcphpug/talk-debugging-2015/blob/master/export-kcphpup-apr1-debuggin-print-page.pdf
 
-* Tip!  It looks / works WAY better if you run it on your own system *
+*Tip!  It looks / works WAY better if you run it on your own system*
