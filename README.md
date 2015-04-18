@@ -39,4 +39,7 @@ So, this turned out to be a pain. I ended up just using Chrome's Print to PDF an
 
 #### Current "Print" Presentation
 Download the most recent printed version here:
+
 https://github.com/kcphpug/talk-debugging-2015/blob/master/export-kcphpup-apr1-debuggin-print-page.pdf
+
+* Tip!  It looks / works WAY better if you run it on your own system *
