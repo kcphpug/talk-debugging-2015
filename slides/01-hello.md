@@ -3,7 +3,7 @@
 &nbsp;
 &nbsp;
 
-### April 1st, 2015
+### Dan Holmes @ April 1st, 2015
 ## Kansas City PHP User's Group
 
 

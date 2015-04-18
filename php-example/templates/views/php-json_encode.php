@@ -12,7 +12,7 @@ $data = array(
         'two.one' => array(
             'two.one.zero' => 210,
             'two.one.one' => array(
-                'two.one.one.zero' => 3.141592564,
+                'two.one.one.zero' => 3.141,
                 'two.one.one.one'  => 2.7,
             ),
         ),

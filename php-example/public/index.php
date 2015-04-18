@@ -13,6 +13,7 @@ $app = new \Slim\Slim($config);
 if($configLocal) $app->config($configLocal);
 $app->view(new SimpleView());
 $app->view->setLayout('layout.php');
+$app->view->showErrorLog = (bool) $app->request()->params('showErrorLog',false);
 
 
 // Define routes

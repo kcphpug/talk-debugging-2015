@@ -5,6 +5,5 @@ if ("debug") {
     $whoops->register();
 }
 
-
 // Try to instantiate some class
 $foo = new SomeClassThatDoesntExist();

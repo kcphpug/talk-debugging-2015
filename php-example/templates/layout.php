@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 $responseSize = strlen(trim($this->data['_content']));
-$responseWidth = ( $responseSize == 0 || $responseSize > 100 ) ? '12' : '6';
+$responseWidth = ( $responseSize > 1 && $responseSize < 8000 ) ? '6' : '12';
 ?>
 <html lang="en">
 <head>
@@ -37,32 +37,31 @@ $responseWidth = ( $responseSize == 0 || $responseSize > 100 ) ? '12' : '6';
                 <div class="row">
                     <div class="col-xs-12 col-sm-<?=$responseWidth ?>">
                         <h2><?= $this->data['_contentFileName']?></h2>
-                        <pre style="max-width:800px;"><?= $this->data['_contentSource']?>
+                        <pre><?= $this->data['_contentSource']?>
                         </pre>
                     </div>
-
-                    <div class="col-xs-12 col-sm-<?=$responseWidth ?>">
-                        <h2>response</h2>
-                        <pre style="max-width:800px;"><?= $this->data['_content']?>
-                        </pre>
-                    </div>
+                    <?php if(!empty($responseSize)):?>
+                        <div class="col-xs-12 col-sm-<?=$responseWidth ?>">
+                            <h2>Response</h2>
+                            <pre><?= $this->data['_content']?>
+                            </pre>
+                        </div>
+                    <?php endif;?>
                 </div>
-            </div>
-        </div>
-
-        <div class="mastfoot">
-            <div class="inner">
+                <?php if(($this->showErrorLog)):?>
                 <div>
+                    <small>Server's Error Log:</small>
+                    <iframe id="error-log" name="error-log" width="100%" src="/show-error-log"></iframe>
                     <form class="navbar-form navbar-right">
-                        PHP Error Log
                         <a class="btn btn-default navbar-btn" target="error-log" href="/show-error-log">refresh</a>
                         <a class="btn btn-default navbar-btn" target="error-log" href="/clear-error-log">clear</a>
                     </form>
-
-                    <iframe id="error-log" name="error-log" width="100%" src="/show-error-log"></iframe>
                 </div>
+                <?php endif?>
             </div>
         </div>
+
+
 
     </div>
 
