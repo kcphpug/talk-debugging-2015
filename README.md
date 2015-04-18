@@ -28,3 +28,15 @@ npm install -g prez
 prez --server --watch
 ````
 Code and markdown may be updated to easily update slides.
+
+#### To "Print" Presentation
+So, this turned out to be a pain. I ended up just using Chrome's Print to PDF and the print-page stylesheet in reveal-js.
+
+*Once the presentation is started*
+* change Browser URL to http://127.0.0.1:9000/?print-page#/hello
+* Position / clean up any "error log" boxes to where you want them
+* Ctrl+P, Landscape, print to Save as PDF
+
+#### Current "Print" Presentation
+Download the most recent printed version here:
+https://github.com/kcphpug/talk-debugging-2015/blob/master/export-kcphpup-apr1-debuggin-print-page.pdf
