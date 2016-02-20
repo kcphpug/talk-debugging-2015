@@ -7,12 +7,14 @@ Because this presentation was a mix of content and running examples, I'll need t
 work to generate a "slidedeck".  When I do I'll post it here and to the comments section on our meetup.
 
 ####Slide system uses:
-* npm
 * php 5.4+
+* slim (php)
 * composer
 * reveal.js
+
+####If you want to edit slides, you are going to need
+* npm
 * lmtm/prez
-* slim (php)
 
 ####To Start Presentation:
 php / slim backend
@@ -24,10 +26,10 @@ php -S 127.0.0.1:8888
 
 prez/reveal front-end
 ````bash
-npm install -g prez
-prez --server --watch
+cd build
+php -S 127.0.0.1:9000
 ````
-Code and markdown may be updated to easily update slides.
+
 
 #### To "Print" Presentation
 So, this turned out to be a pain. I ended up just using Chrome's Print to PDF and the print-page stylesheet in reveal-js.
@@ -42,4 +44,10 @@ Download the most recent printed version here:
 
 https://github.com/kcphpug/talk-debugging-2015/blob/master/export-kcphpup-apr1-debuggin-print-page.pdf
 
+####Code and markdown may be updated to easily update slides.
+Rebuilding the Prez slides
+````bash
+npm install -g prez
+prez --server --watch
+````
 * Tip!  It looks / works WAY better if you run it on your own system *
