@@ -3,8 +3,7 @@
 ### April 1, 2015
 
 #### Pre-rendered slides
-Because this presentation was a mix of content and running examples, I'll need to do some
-work to generate a "slidedeck".  When I do I'll post it here and to the comments section on our meetup.
+Because this presentation was a mix of content and running examples, The "pre rendered" is WAY less than fancy. Pull it down and play with it on your own system.  *I've left a link to a pdf at the bottom of this readme*
 
 ####Slide system uses:
 * php 5.4+
@@ -29,7 +28,6 @@ prez/reveal front-end
 cd build
 php -S 127.0.0.1:9000
 ````
-
 
 #### To "Print" Presentation
 So, this turned out to be a pain. I ended up just using Chrome's Print to PDF and the print-page stylesheet in reveal-js.
